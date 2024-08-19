@@ -4,7 +4,7 @@
 
 ## **Overview**
 
-This project is a web-based application that allows users to upload an image and classify it using a custom-trained YOLOv8 classifier model. The app provides a simple and user-friendly interface for image classification tasks, leveraging the power of transfer learning and deep learning for accurate predictions.
+This project is a web-based application that allows users to upload an image of rice-leaf and classify it using a custom-trained YOLOv8 classifier model. The app provides a simple and user-friendly interface for image classification tasks, leveraging the power of transfer learning and deep learning for accurate predictions.
 
 ### **Features**
 
@@ -39,12 +39,12 @@ web-app/
 │   └── your_model_weights.pt  # Trained YOLOv8 model weights
 │
 ├── app.py                # Main Flask application
-
+|__ requirement.txt
 ```
 
 ### **1. `app.py`**
 
-The core of the web application, built using Flask. It handles the routing, file uploads, and integration with the YOLOv8 model for image classification.
+The core of the web application is built using Flask. It handles the routing, file uploads, and integration with the YOLOv8 model for image classification.
 
 ### **2. `templates/`**
 
@@ -62,11 +62,11 @@ Stores the images uploaded by users temporarily for processing and display.
 
 ### **5. `yolov8_model/`**
 
-This directory contains the YOLOv8 model weights (`your_model_weights.pt`). The model is loaded from here to make predictions.
+This directory contains the YOLOv8 model weights (`best.pt`). The model is loaded from here to make predictions.
 
 ## **How It Works**
 
-1. **Pre-trained Model Loading**: The app loads a pre-trained YOLOv8 model, fine-tuned for a specific classification task (e.g., plant disease detection).
+1. **Pre-trained Model Loading**: The app loads a custom-trained YOLOv8 model, fine-tuned for a specific classification task (e.g., plant disease detection).
 
 2. **Image Upload**: Users upload an image through the web interface. The image is saved in the `uploads/` directory.
 
@@ -102,12 +102,12 @@ This directory contains the YOLOv8 model weights (`your_model_weights.pt`). The 
 3. **Install Dependencies**
 
    ```bash
-   pip install -r requirements.txt
+   pip install -r requirement.txt
    ```
 
 4. **Download Your Trained YOLOv8 Model**
 
-   Place your custom-trained YOLOv8 model weights (`your_model_weights.pt`) in the `yolov8_model/` directory.
+   Place your custom-trained YOLOv8 model weights (`best.pt`) in the `yolov8_model/` directory.
 
 5. **Run the Application**
 

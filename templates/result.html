@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="result-content slide-in">
+            <h1>Classification Result</h1>
+            <p>Prediction: {{ prediction }}</p>
+            <img src="{{ url_for('uploaded_file', filename=image) }}" alt="Uploaded Image">
+            <a href="{{ url_for('index') }}" class="back-button">Try another image</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".result-content").classList.add("show");
+        });
+    </script>
+</body>
+</html>
